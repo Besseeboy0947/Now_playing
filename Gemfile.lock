@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    Now_playing (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    open_uri_redirections (0.2.1)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  Now_playing!
+  bundler (~> 1.16)
+  open_uri_redirections
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.4

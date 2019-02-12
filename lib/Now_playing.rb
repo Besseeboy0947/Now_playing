@@ -1,9 +1,11 @@
-require_relative './Now_playing/version'
-require_relative './Now_playing/Nowplaying.rb'
-require_relative './Now_playing/scraper.rb'
-require_relative './Now_playing/cli.rb'
-require_relative './Now_playing/movie.rb'
+require 'nokogiri'
+require 'pry'
+require 'open-uri'
 
-module NowPlaying
-  # Your code goes here...
-end
+
+require_relative "Now_playing/version.rb"
+require_relative "Now_playing/cli.rb"
+require_relative "Now_playing/scraper.rb"
+require_relative "Now_playing/movie.rb"
+require_relative "Now_playing/review.rb" 
+
