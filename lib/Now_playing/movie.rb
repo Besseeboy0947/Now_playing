@@ -28,13 +28,12 @@ class NowPlaying::Movie
 	end
 
 
-
- 	def self.create
+   def self.create
  		movies = NowPlaying::Movie.all
  		m = movies # need to add .filter method with do block
- 		# puts m.description  # Trying to add loop of movies description
+ 	# puts m.description # Trying to add loop of movies description
  		scraper = NowPlaying::Scraper.new
-  		#scraper.get_titles 
+  		scraper.get_titles 
 
   		#scraper.get_titles returns an array of all the titles
   		#we are storing that array in titles to be used again later
@@ -49,7 +48,6 @@ class NowPlaying::Movie
 
 	def self.list  #Beginning of do
 		list = []
-	# binding.pry
 		self.all.each do |nowPlaying|
 			# list << nowplaying.name
 	    end
@@ -60,10 +58,6 @@ class NowPlaying::Movie
 	    end
  
     end
-
-
-
-
 end
 
 

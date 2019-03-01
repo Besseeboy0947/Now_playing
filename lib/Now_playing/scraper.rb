@@ -27,9 +27,9 @@ class NowPlaying::Scraper
 
       def  get_url
          @html.css("a.visual-title")[0..24].each.with_index do |url, i|
-          @@movies[i].url = url["href"]
-		 end  
- 		# @html.css("whatever gets what you need ")[0..24].each.with_index do |thing, i|
+          @@movies[i].url = url["href"].gsub("http","https")
+	  end  
+ 		# @html.css("gets whatever you need ")[0..24].each.with_index do |thing, i|
  			#movies[i].thing = whatever nokogiri
  		  #end
  		# iterators
@@ -51,10 +51,12 @@ class NowPlaying::Scraper
 
 	
 
- def get_description
+   def get_description(movie)
+   	@html = Nokogiri::HTML(open(movie.url))
+   	movie.description = @html.css(".mop__synopsis-content").text.strip
  	#https://www.fandango.com/escape-room-2019-215085/plot-summary
  	#movie-synopsis__body
- 	description = @html.css("movie-synopsis__body").strip
+ 	#description = @html.css("movie-synopsis__body").strip
 
-    end
+   end
 end
