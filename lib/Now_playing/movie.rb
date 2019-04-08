@@ -43,7 +43,6 @@ class NowPlaying::Movie
     # titles.each do |title|
     #NowPlaying::Movie.new #.new instantiates a new instance of an object and calls initialize method
     #end
- 		
 
 
 	def self.list  #Beginning of do

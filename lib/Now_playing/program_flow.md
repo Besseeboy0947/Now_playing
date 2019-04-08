@@ -29,3 +29,10 @@
 6.  Call your .css(‘selector’) methods on the html that you saved as a variable to get the description
 
 7. Use the `movie` object that you passed in as an argument and the writer method to set the movie’s description. (i.e. `movie.description=` )
+
+
+
+
+# keep looping after movie is chosen.
+
+#if a user would like to exit the program make a command
