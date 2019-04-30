@@ -3,9 +3,9 @@
 require "bundler/setup"
 require "Now_playing"
 
-# You can add fixtures and/or initialization code here to make experimenting
+# You can add fixtures and/or initialization code here to make experiment with.
 # with your gem easier. You can also use a different console, if you like.
-
+#executable
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start

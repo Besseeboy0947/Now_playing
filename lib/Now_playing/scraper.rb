@@ -5,7 +5,8 @@ require 'pry'
 class NowPlaying::Scraper
 
 	def initialize 
-		@html = Nokogiri::HTML(open("https://www.fandango.com/moviesintheaters"))
+		puts "scraping for movies ...... https://www.fandango.com/moviesintheaters"
+		@html ||= Nokogiri::HTML(open("https://www.fandango.com/moviesintheaters"))
 	end
 
 	    
@@ -52,6 +53,7 @@ class NowPlaying::Scraper
 	
 
    def get_description(movie)
+   	puts "SCRAPING FOR DESCRIPTION OF #{movie.title}"
    	@html = Nokogiri::HTML(open(movie.url))
    	movie.description = @html.css(".mop__synopsis-content").text.strip
  	#https://www.fandango.com/escape-room-2019-215085/plot-summary

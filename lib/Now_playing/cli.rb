@@ -1,6 +1,6 @@
 class NowPlaying::CLI
 
-  def call
+  def call 
     welcome
   end  # of call method
 
@@ -10,18 +10,23 @@ class NowPlaying::CLI
     input = gets.strip
     if input == "exit"
     elsif input == "list"
-   list # gives user the list 
-    choice_loop # lets all the choices run in a loop 
+      list # gives user the list 
+      choice_loop # lets all the choices run in a loop 
     else 
-    puts "Sorry! I didn't understand that command"
-    welcome
+      puts "Sorry! I didn't understand that command"
+      welcome
     end 
 
   end
 
   def list
-    NowPlaying::Scraper.new.get_titles
-    NowPlaying::Scraper.new.get_url
+    # 1. create a local variable called scraper and assign it to a new instance of NowPlaying::Scraper 
+    # 2. use the scraper instance you just made to invoke both `get_titles` and `get_url`
+    #NowPlaying::Scraper.new.get_titles
+    #NowPlaying::Scraper.new.get_url
+    scraper = NowPlaying::Scraper.new
+    scraper.get_titles
+    scraper.get_url
     @movie_list = NowPlaying::Movie.all
     idx = 1
        @movie_list.each do |movie|
@@ -35,7 +40,7 @@ class NowPlaying::CLI
   def display_movie(choice)
     index = choice - 1
     movie = @movie_list[index]
-    NowPlaying::Scraper.new.get_description(@movie_list[index])
+    #NowPlaying::Scraper.new.get_description(@movie_list[index])
     puts @movie_list[index].title
     puts @movie_list[index].url
     puts @movie_list[index].description

@@ -20,12 +20,25 @@ class NowPlaying::Movie
  	end 
 
  	def self.all
-		@@all
+      @@all
 	end
 
 	def self.clear
-	 @@all = []
+	  @@all = []
 	end
+
+	#  add a custom getter/setter for description
+	#  it should look to see if the description already exists, and if it does, return it
+	#  if the description does not yet exist, then call the Scraper method `#get_description` to get it
+
+	def description
+	  # if the description exists
+	    # return it 
+	  # else 
+	    # scrape to get the description
+	    # return it
+	  # end
+	end 
 
 
    def self.create

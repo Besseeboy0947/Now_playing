@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 require './lib/Now_playing.rb'
 
+
 NowPlaying::CLI.new.call
+
+# new_cli = NowPlaying::CLI.new
+# new_cli.call
